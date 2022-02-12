@@ -2,14 +2,13 @@ import React from "react";
 import Carousel from "react-material-ui-carousel";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import RestaurantIcon from "@mui/icons-material/Restaurant";
 
 import ImageSlider1 from "../../assets/slider_image_1.png";
 import ImageSlider2 from "../../assets/slider_image_2.png";
 import ImageSlider3 from "../../assets/slider_image_3.png";
 import ImageSlider4 from "../../assets/slider_image_4.png";
-import Typography from "@mui/material/Typography";
-
-import RestaurantIcon from "@mui/icons-material/Restaurant";
 
 function Slider() {
   const title = {
@@ -41,11 +40,16 @@ function Slider() {
     <Carousel
       animation="slide"
       duration={650}
-      //   autoPlay
+      // autoPlay
       indicators={false}
       fullHeightHover={false}
       navButtonsAlwaysVisible
-      sx={{ height: "85vh" }}
+      sx={{
+        minHeight: "595px",
+        "& .MuiIconButton-root": {
+          backgroundColor: { xs: "transparent", sm: "#111213" },
+        },
+      }}
     >
       {contents.map((item, i) => (
         <SliderItem key={i} item={item} />
@@ -56,24 +60,42 @@ function Slider() {
 
 function SliderItem(props: any) {
   return (
-    <Box sx={{ height: "100%", position: "relative" }}>
+    <Box sx={{ position: { md: "relative" }, overflow: "hidden" }}>
       <Box
         component="img"
         sx={{
-          height: "85vh",
-          width: "100%",
-          objectFit: "cover",
+          height: "100%",
+          marginLeft: {
+            xs: "-215%",
+            sm: "-110%",
+            md: "-60%",
+            lg: "-25%",
+          },
         }}
         src={props.item.image}
         alt="Slider"
       />
-      <Box sx={{ position: "absolute", top: "30%", left: "15%" }}>
+
+      <Box
+        sx={{
+          position: "absolute",
+          top: "30%",
+          left: { xs: "0", sm: "15%" },
+          backgroundColor: "rgb(0 0 0 / 35%)",
+          width: { xs: "100vw", sm: "inherit" },
+          textAlign: { xs: "center", sm: "left" },
+        }}
+      >
         <Typography
           variant="h2"
           component="div"
           sx={{
             color: "white",
-            fontSize: "6rem",
+            fontSize: {
+              xs: "3.7rem",
+              sm: "4.5rem",
+              md: "6rem",
+            },
             fontWeight: "500",
             textTransform: "uppercase",
           }}
@@ -86,7 +108,11 @@ function SliderItem(props: any) {
           component="div"
           sx={{
             color: "#03D173",
-            fontSize: "4rem",
+            fontSize: {
+              xs: "2.8rem",
+              sm: "3.3rem",
+              md: "6rem",
+            },
             fontWeight: "300",
             textTransform: "uppercase",
           }}
