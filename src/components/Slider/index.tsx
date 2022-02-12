@@ -81,7 +81,7 @@ function SliderItem(props: any) {
           position: "absolute",
           top: "30%",
           left: { xs: "0", sm: "15%" },
-          backgroundColor: "rgb(0 0 0 / 35%)",
+          backgroundColor: { xs: "rgb(0 0 0 / 55%)", sm: "transparent" },
           width: { xs: "100vw", sm: "inherit" },
           textAlign: { xs: "center", sm: "left" },
         }}
