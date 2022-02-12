@@ -11,10 +11,8 @@ import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 function Navbar() {
   return (
     <AppBar
-      position="static"
+      position="sticky"
       sx={{
-        borderBottomLeftRadius: "15px",
-        borderBottomRightRadius: "15px",
         backgroundColor: "#C1E7D6",
       }}
     >
