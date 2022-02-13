@@ -61,8 +61,8 @@ function Map() {
           <Polygon
             positions={polygonCoordinates.map((c) => [c.latitude, c.longitude])}
             pathOptions={{
-              color: "red",
-              fillColor: "red",
+              color: "purple",
+              fillColor: "purple",
             }}
           />
           <Circle
@@ -70,7 +70,7 @@ function Map() {
             center={[coordinates.lat, coordinates.lng]}
             pathOptions={{
               color: "blue",
-              fillColor: "red",
+              fillColor: "blue",
             }}
           />
         </FeatureGroup>

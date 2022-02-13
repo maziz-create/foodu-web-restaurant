@@ -106,7 +106,7 @@ function AddressAreas() {
                   border: ".3px solid black",
                 }}
               >
-                Area1 - 8 €
+                Area2 - 8 €
               </Button>
             </Box>
           </>

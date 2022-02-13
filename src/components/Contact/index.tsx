@@ -158,7 +158,7 @@ function Contact() {
             sx={{ mt: 2, fontSize: "1rem" }}
           >
             <Paper sx={{ backgroundColor: "transparent" }} elevation={3}>
-              (( STATIC )) Lyhtytie 19 A 11, 00750 Helsinki
+              (( STATIC )) +358 40 147 77 57
             </Paper>
           </Typography>
         </Typography>
