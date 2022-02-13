@@ -18,8 +18,7 @@ function DeliveryZones() {
         },
         alignItems: "center",
         px: { xs: 2, md: 5 },
-        pb: 5,
-        zIndex: "-1",
+        pb: 15,
         backgroundColor: "#C1E7D6",
       }}
     >

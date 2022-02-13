@@ -8,6 +8,7 @@ import Slider from "./components/Slider";
 import Download from "./components/Download";
 import Contact from "./components/Contact";
 import DeliveryZones from "./components/DeliveryZones";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -15,10 +16,11 @@ function App() {
       <Box>
         <Navbar />
         <Slider />
+        <Download />
+        <Contact />
+        <DeliveryZones />
+        <Footer />
       </Box>
-      <Download />
-      <Contact />
-      <DeliveryZones />
     </>
   );
 }
