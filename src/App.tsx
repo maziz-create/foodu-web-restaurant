@@ -6,7 +6,7 @@ import Box from "@mui/material/Box";
 import Navbar from "./components/Navbar";
 import Slider from "./components/Slider";
 import Download from "./components/Download";
-import OpeningHours from "./components/OpeningHours";
+import Contact from "./components/Contact";
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
       </Box>
       <Box>
         <Download />
-        <OpeningHours />
+        <Contact />
       </Box>
     </>
   );
