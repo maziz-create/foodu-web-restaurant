@@ -38,9 +38,9 @@ function Slider() {
 
   return (
     <Carousel
-      animation="slide"
       duration={650}
       autoPlay
+      interval={6000}
       swipe={false}
       indicators={false}
       fullHeightHover={false}
