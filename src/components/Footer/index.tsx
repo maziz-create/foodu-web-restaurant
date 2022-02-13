@@ -67,6 +67,7 @@ function Footer() {
       <Box
         sx={{
           display: "flex",
+          flexDirection: { xs: "column", sm: "row" },
           justifyContent: "center",
           alignItems: "center",
           backgroundColor: "#F1F1F3",
