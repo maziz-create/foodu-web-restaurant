@@ -40,7 +40,8 @@ function Slider() {
     <Carousel
       animation="slide"
       duration={650}
-      // autoPlay
+      autoPlay
+      stopAutoPlayOnHover
       indicators={false}
       fullHeightHover={false}
       navButtonsAlwaysVisible
