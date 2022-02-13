@@ -44,6 +44,7 @@ function Download() {
             fontWeight: "200",
             fontSize: "1rem",
             mr: 0,
+            maxWidth: { lg: "60%" },
           }}
         >
           Let's go, download our free app and fall in love right away on the
@@ -66,8 +67,8 @@ function Download() {
         sx={{
           display: { xs: "none", lg: "block" },
           position: "absolute",
-          top: "8rem",
-          right: "0",
+          top: "5rem",
+          right: "4rem",
         }}
       >
         <Box
