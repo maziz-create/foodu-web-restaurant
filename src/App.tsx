@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar";
 import Slider from "./components/Slider";
 import Download from "./components/Download";
 import Contact from "./components/Contact";
+import DeliveryZones from "./components/DeliveryZones";
 
 function App() {
   return (
@@ -15,10 +16,9 @@ function App() {
         <Navbar />
         <Slider />
       </Box>
-      <Box>
-        <Download />
-        <Contact />
-      </Box>
+      <Download />
+      <Contact />
+      <DeliveryZones />
     </>
   );
 }
