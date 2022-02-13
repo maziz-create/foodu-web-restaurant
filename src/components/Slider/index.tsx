@@ -41,7 +41,7 @@ function Slider() {
       animation="slide"
       duration={650}
       autoPlay
-      stopAutoPlayOnHover
+      swipe={false}
       indicators={false}
       fullHeightHover={false}
       navButtonsAlwaysVisible
