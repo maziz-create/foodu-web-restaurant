@@ -65,7 +65,7 @@ function SliderItem(props: any) {
       <Box
         component="img"
         sx={{
-          height: "100%",
+          height: { xs: "100%", xl: "620px" },
           marginLeft: {
             xs: "-215%",
             sm: "-110%",

@@ -1,8 +1,10 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
+
+import NavbarContent from "./NavbarContent";
+
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Logo from "../../assets/foodu_logo.svg";
@@ -16,19 +18,23 @@ function Navbar() {
       position="sticky"
       sx={{
         backgroundColor: "#FBFAF5",
+        py: 3,
       }}
     >
       <Container maxWidth="xl">
         <Toolbar
-          sx={{ display: "flex", justifyContent: "space-between" }}
+          sx={{
+            display: "flex",
+            justifyContent: { xs: "space-between", lg: "space-between" },
+          }}
           disableGutters
         >
           <IconButton
             onClick={() => setShowModal(!showModal)}
-            sx={{ display: { xs: "block", sm: "none" } }}
-            color="secondary"
+            sx={{ display: { xs: "block", lg: "none", paddingBottom: "0px" } }}
+            color="success"
           >
-            <MenuIcon fontSize="large" />
+            <MenuIcon fontSize="large" sx={{ paddingBottom: 0 }} />
           </IconButton>
           <Box
             component="img"
@@ -38,30 +44,36 @@ function Navbar() {
               maxHeight: {
                 xs: "32px",
                 sm: "48px",
-                md: "64px",
-              },
-              p: {
-                xs: 2,
-                sm: 3,
-                md: 4,
               },
             }}
           />
+          {window.innerWidth > 1200 && <NavbarContent />}
         </Toolbar>
         <Box
           sx={{
             height: "100%",
             width: "100%",
-            backgroundColor: "red",
           }}
         >
           <Collapse in={showModal}>
-            <>
-              <p>asdasdsa</p>
-              <p>asdasdsa</p>
-              <p>asdasdsa</p>
-              <p>asdasdsa</p>
-            </>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                textAlign: "center",
+                alignItems: "center",
+                "& > *": {
+                  mb: "15px",
+                  width: {
+                    xs: "85%",
+                    sm: "65%",
+                    md: "45%",
+                  },
+                },
+              }}
+            >
+              <NavbarContent />
+            </Box>
           </Collapse>
         </Box>
       </Container>
