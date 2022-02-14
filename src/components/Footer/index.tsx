@@ -52,9 +52,12 @@ function Footer() {
           backgroundColor: "#F1F1F3",
         }}
       >
-        {images.map((img) => {
+        {images.map((img, i) => {
           return (
-            <Box sx={{ width: { xs: "44%", sm: "31%", md: "16%" } }}>
+            <Box
+              key={"img" + i}
+              sx={{ width: { xs: "44%", sm: "31%", md: "16%" } }}
+            >
               <Box
                 component="img"
                 src={img.img}

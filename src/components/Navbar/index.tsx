@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -6,44 +6,30 @@ import Typography from "@mui/material/Typography";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Logo from "../../assets/foodu_logo.svg";
-import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
+import IconButton from "@mui/material/IconButton";
+import Collapse from "@mui/material/Collapse";
 
 function Navbar() {
+  const [showModal, setShowModal] = useState<boolean>(false);
   return (
     <AppBar
       position="sticky"
       sx={{
-        backgroundColor: "#C1E7D6",
+        backgroundColor: "#FBFAF5",
       }}
     >
       <Container maxWidth="xl">
-        <Toolbar sx={{ alignItems: "start" }} disableGutters>
-          <Box
-            sx={{
-              flexGrow: 1,
-              display: { xs: "flex", md: "none" },
-              alignItems: "start",
-            }}
+        <Toolbar
+          sx={{ display: "flex", justifyContent: "space-between" }}
+          disableGutters
+        >
+          <IconButton
+            onClick={() => setShowModal(!showModal)}
+            sx={{ display: { xs: "block", sm: "none" } }}
+            color="secondary"
           >
-            <Accordion
-              sx={{
-                backgroundColor: "transparent",
-                boxShadow: "none",
-                "&:before": { m: 0 },
-              }}
-            >
-              <AccordionSummary>
-                <MenuIcon fontSize="large" />
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                  eget.
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
-          </Box>
+            <MenuIcon fontSize="large" />
+          </IconButton>
           <Box
             component="img"
             src={Logo}
@@ -62,6 +48,22 @@ function Navbar() {
             }}
           />
         </Toolbar>
+        <Box
+          sx={{
+            height: "100%",
+            width: "100%",
+            backgroundColor: "red",
+          }}
+        >
+          <Collapse in={showModal}>
+            <>
+              <p>asdasdsa</p>
+              <p>asdasdsa</p>
+              <p>asdasdsa</p>
+              <p>asdasdsa</p>
+            </>
+          </Collapse>
+        </Box>
       </Container>
     </AppBar>
   );
