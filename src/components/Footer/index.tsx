@@ -56,12 +56,14 @@ function Footer() {
           return (
             <Box
               key={"img" + i}
-              sx={{ width: { xs: "44%", sm: "31%", md: "16%" } }}
+              sx={{
+                width: { xs: "47%", sm: "31%", md: "16%" },
+              }}
             >
               <Box
                 component="img"
                 src={img.img}
-                sx={{ width: "130px", height: "100px", px: 2 }}
+                sx={{ width: "130px", height: "100px", px: { xs: 0, sm: 2 } }}
               />
             </Box>
           );
