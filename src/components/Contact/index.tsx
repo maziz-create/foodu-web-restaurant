@@ -17,6 +17,7 @@ function Contact() {
         justifyContent: {
           xs: "center",
           lg: "flex-start",
+          xl: "center",
         },
         alignItems: "center",
         px: { xs: 2, md: 15 },

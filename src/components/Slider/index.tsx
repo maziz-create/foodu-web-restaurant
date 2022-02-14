@@ -71,7 +71,9 @@ function SliderItem(props: any) {
             sm: "-110%",
             md: "-60%",
             lg: "-25%",
+            xl: "0",
           },
+          width: { xl: "100%" },
         }}
         src={props.item.image}
         alt="Slider"

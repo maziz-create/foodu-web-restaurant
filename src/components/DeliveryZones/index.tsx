@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./styles.css";
 import Divider from "@mui/material/Divider";
 import Box from "@mui/material/Box";
 
@@ -15,6 +15,7 @@ function DeliveryZones() {
         justifyContent: {
           xs: "space-evenly",
           lg: "space-between",
+          xl: "space-evenly",
         },
         alignItems: "center",
         px: { xs: 2, md: 5 },
