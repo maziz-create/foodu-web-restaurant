@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import ButtonBase from "@mui/material/ButtonBase";
 import Typography from "@mui/material/Typography";
+import Collapse from "@mui/material/Collapse";
 
 import Kebabit from "../../assets/order/kebabit.jpeg";
 import Pizzat from "../../assets/order/pizzat.jpeg";
@@ -103,6 +104,9 @@ const ImageMarked = styled("span")(({ theme }) => ({
 }));
 
 function Order() {
+  const [showModal, setShowModal] = useState(false);
+  const [activeMenu, setActiveMenu] = useState(-1);
+
   return (
     <>
       <Box
@@ -122,39 +126,63 @@ function Order() {
         <Box
           sx={{
             display: "flex",
+            flexDirection: "column",
             justifyContent: "center",
-            flexWrap: "wrap",
             minWidth: 300,
             width: "100%",
           }}
         >
           {images.map((image) => (
-            <ImageButton
-              focusRipple
-              key={image.title}
-              style={{
-                width: image.width,
-              }}
-            >
-              <ImageSrc style={{ backgroundImage: `url(${image.url})` }} />
-              <ImageBackdrop className="MuiImageBackdrop-root" />
-              <Image>
-                <Typography
-                  component="span"
-                  variant="subtitle1"
-                  color="inherit"
+            <>
+              <ImageButton
+                focusRipple
+                key={image.title}
+                style={{
+                  marginBottom: "15px",
+                }}
+                sx={{ width: "100%", height: "300px" }}
+                onClick={() => setShowModal(!showModal)}
+              >
+                <ImageSrc style={{ backgroundImage: `url(${image.url})` }} />
+                <ImageBackdrop className="MuiImageBackdrop-root" />
+                <Image sx={{ borderRadius: "15px" }}>
+                  <Typography
+                    component="span"
+                    variant="subtitle1"
+                    color="inherit"
+                    sx={{
+                      position: "relative",
+                      p: 4,
+                      pt: 2,
+                      pb: (theme) => `calc(${theme.spacing(1)} + 6px)`,
+                      borderRadius: "10px",
+                    }}
+                  >
+                    {image.title}
+                    <ImageMarked className="MuiImageMarked-root" />
+                  </Typography>
+                </Image>
+              </ImageButton>
+              <Collapse in={showModal}>
+                <Box
                   sx={{
-                    position: "relative",
-                    p: 4,
-                    pt: 2,
-                    pb: (theme) => `calc(${theme.spacing(1)} + 6px)`,
+                    display: "flex",
+                    flexDirection: "column",
+                    textAlign: "center",
+                    alignItems: "center",
+                    "& > *": {
+                      width: {
+                        xs: "85%",
+                        sm: "65%",
+                        md: "45%",
+                      },
+                    },
                   }}
                 >
-                  {image.title}
-                  <ImageMarked className="MuiImageMarked-root" />
-                </Typography>
-              </Image>
-            </ImageButton>
+                  asdasdasdasdas
+                </Box>
+              </Collapse>
+            </>
           ))}
         </Box>
       </Box>
