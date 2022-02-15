@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
@@ -10,29 +10,35 @@ import Kebabit from "../../assets/order/kebabit.jpeg";
 import Pizzat from "../../assets/order/pizzat.jpeg";
 import Salaatit from "../../assets/order/salaatit.jpeg";
 import Juomat from "../../assets/order/juomat.jpg";
+import Paper from "@mui/material/Paper";
 
 const images = [
   {
+    menuId: 0,
     url: Kebabit,
     title: "Kebabit",
     width: "30%",
   },
   {
+    menuId: 1,
     url: Pizzat,
     title: "Pizzat",
     width: "30%",
   },
   {
+    menuId: 2,
     url: Salaatit,
     title: "Salaatit",
     width: "30%",
   },
   {
+    menuId: 3,
     url: Juomat,
     title: "Juomat",
     width: "30%",
   },
   {
+    menuId: 4,
     url: Kebabit,
     title: "Kupongit",
     width: "30%",
@@ -104,7 +110,7 @@ const ImageMarked = styled("span")(({ theme }) => ({
 }));
 
 function Order() {
-  const [showModal, setShowModal] = useState(false);
+  //TODO: activeMenu bir <Menu> olacak!!, number değil.
   const [activeMenu, setActiveMenu] = useState(-1);
 
   return (
@@ -141,7 +147,16 @@ function Order() {
                   marginBottom: "15px",
                 }}
                 sx={{ width: "100%", height: "300px" }}
-                onClick={() => setShowModal(!showModal)}
+                onClick={() => {
+                  //TODO: activeMenu bir <Menu> itemi olacağı için, activeMenu.id kontrolü yapılacak!!
+                  if (activeMenu === -1) {
+                    setActiveMenu(image.menuId);
+                  } else if (activeMenu === image.menuId) {
+                    setActiveMenu(-1);
+                  } else if (activeMenu !== -1 && activeMenu !== image.menuId) {
+                    setActiveMenu(image.menuId);
+                  }
+                }}
               >
                 <ImageSrc style={{ backgroundImage: `url(${image.url})` }} />
                 <ImageBackdrop className="MuiImageBackdrop-root" />
@@ -156,6 +171,7 @@ function Order() {
                       pt: 2,
                       pb: (theme) => `calc(${theme.spacing(1)} + 6px)`,
                       borderRadius: "10px",
+                      textTransform: "uppercase",
                     }}
                   >
                     {image.title}
@@ -163,7 +179,7 @@ function Order() {
                   </Typography>
                 </Image>
               </ImageButton>
-              <Collapse in={showModal}>
+              <Collapse in={activeMenu === image.menuId}>
                 <Box
                   sx={{
                     display: "flex",
@@ -179,7 +195,14 @@ function Order() {
                     },
                   }}
                 >
-                  asdasdasdasdas
+                  <Paper
+                    sx={{ backgroundColor: "transparent", mt: 2, mb: 3 }}
+                    elevation={15}
+                  >
+                    Menu Item 1 <br />
+                    Menu Item 2 <br /> Menu Item 3 <br /> Menu Item 4 <br />
+                    Menu Item 5 <br /> Menu Item 6 <br /> Menu Item 6
+                  </Paper>
                 </Box>
               </Collapse>
             </>

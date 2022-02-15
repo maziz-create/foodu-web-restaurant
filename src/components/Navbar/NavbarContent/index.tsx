@@ -28,7 +28,7 @@ function NavbarContent() {
         variant="text"
         sx={{ color: "#575756", fontSize: "15px", mb: { xs: 1, lg: 0 } }}
       >
-        Dashboards
+        Dashboard
       </Button>
       <Button
         color="success"
