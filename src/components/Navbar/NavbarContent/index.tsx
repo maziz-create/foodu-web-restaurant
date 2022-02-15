@@ -24,18 +24,21 @@ function NavbarContent() {
 
   return (
     <>
-      <Button variant="text" sx={{ color: "#575756", fontSize: "15px" }}>
+      <Button
+        variant="text"
+        sx={{ color: "#575756", fontSize: "15px", mb: { xs: 1, lg: 0 } }}
+      >
         Dashboards
       </Button>
       <Button
         color="success"
         variant="contained"
         startIcon={<RestaurantIcon />}
-        sx={{ borderRadius: "30px", p: 2 }}
+        sx={{ borderRadius: "30px", p: 2, mb: { xs: 1, lg: 0 } }}
       >
         See menu and order!
       </Button>
-      <Button variant="text" sx={{ color: "#575756" }}>
+      <Button variant="text" sx={{ color: "#575756", mb: { xs: 1, lg: 0 } }}>
         Contact
       </Button>
       <IconButton
@@ -44,6 +47,7 @@ function NavbarContent() {
           borderRadius: "0",
           color: "green",
           cursor: "default",
+          mb: { xs: 1, lg: 0 },
         }}
       >
         <LocalPhoneIcon sx={{ fontSize: "45px", color: "#575756" }} />
@@ -74,6 +78,7 @@ function NavbarContent() {
           maxWidth: { xs: "50%", lg: "10%" },
           color: "#575756",
           fontWeight: "500",
+          mb: { xs: 1, lg: 0 },
         }}
       >
         Please sign in for see{" "}
@@ -92,7 +97,9 @@ function NavbarContent() {
         </Box>
       </Typography>
 
-      <Box sx={{ display: "flex", justifyContent: "center" }}>
+      <Box
+        sx={{ display: "flex", justifyContent: "center", mb: { xs: 1, lg: 0 } }}
+      >
         <IconButton aria-label="cart">
           <StyledBadge badgeContent={4} color="error">
             <ShoppingCartIcon fontSize="large" />

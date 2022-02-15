@@ -63,7 +63,6 @@ function Navbar() {
                 textAlign: "center",
                 alignItems: "center",
                 "& > *": {
-                  mb: "20px",
                   width: {
                     xs: "85%",
                     sm: "65%",
