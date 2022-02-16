@@ -5,17 +5,17 @@ import Box from "@mui/material/Box";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Order from "./pages/Order";
+// import Order from "./pages/Order";
 
-// import Home from "./pages/Home";
+import Home from "./pages/Home";
 
 function App() {
   return (
     <>
       <Box>
         <Navbar />
-        {/* <Home /> */}
-        <Order />
+        <Home />
+        {/* <Order /> */}
         <Footer />
       </Box>
     </>
